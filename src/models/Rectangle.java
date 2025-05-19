@@ -10,11 +10,11 @@ public class Rectangle {
         this.breath = breath;
     }
 
-    public float area() {
+    public int area() {
         return length * breath;
     }
 
-    public float perimeter() {
+    public int perimeter() {
         return 2 * (length + breath);
     }
 }
