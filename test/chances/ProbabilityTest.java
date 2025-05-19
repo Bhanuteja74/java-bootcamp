@@ -27,7 +27,12 @@ class ProbabilityTest {
     }
 
     @Test
-    void InvalidProbability() throws InvalidProbability {
+    void InvalidProbability() {
         assertThrows(InvalidProbability.class, () -> Probability.init(1.5));
+    }
+
+    @Test
+    void invalidAs1() {
+        assertThrows(InvalidProbability.class, () -> Probability.init(1));
     }
 }
