@@ -1,12 +1,12 @@
 package models;
 
 
-public class Square {
+public class Square implements Shapes {
 
     private final int side;
 
-    public Square(int i) {
-        this.side = i;
+    public Square(int side) {
+        this.side = side;
     }
 
 

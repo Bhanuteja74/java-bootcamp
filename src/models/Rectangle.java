@@ -1,6 +1,6 @@
 package models;
 
-public class Rectangle {
+public class Rectangle implements Shapes {
     private final int length;
     private final int breath;
     private int length1;
@@ -10,10 +10,12 @@ public class Rectangle {
         this.breath = breath;
     }
 
+    @Override
     public int area() {
         return length * breath;
     }
 
+    @Override
     public int perimeter() {
         return 2 * (length + breath);
     }
