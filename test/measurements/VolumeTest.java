@@ -4,20 +4,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class VolumesTest {
+class VolumeTest {
     @Test
     void gallonAndLiters() {
-        Volumes gallon = Volumes.createGallon(1);
-        Volumes liters = Volumes.createLiters(3.78);
+        Volume gallon = Volume.create(1, Unit.GALLON);
+        Volume liters = Volume.create(3.78, Unit.LITERS);
         assertEquals(liters, gallon);
     }
 
     @Test
     void twoGallonsToLiters() {
-        Volumes gallon = Volumes.createGallon(2);
-        Volumes liters = Volumes.createLiters(7.56);
+        Volume gallon = Volume.create(2, Unit.GALLON);
+        Volume liters = Volume.create(7.56, Unit.LITERS);
         assertEquals(liters, gallon);
     }
-
-
 }

@@ -4,33 +4,22 @@ import java.util.Objects;
 
 public class Length {
     private final double length;
+    private final Unit unit;
 
-    public Length(double length) {
+    public Length(double length, Unit unit) {
         this.length = length;
+        this.unit = unit;
     }
 
-    public static Length createCentimeters(int cm) {
-        return new Length(cm * 10);
-    }
-
-    public static Length createMillimeteres(int mm) {
-        return new Length(mm * 1);
-    }
-
-    public static Length createInches(int inch) {
-        return new Length(inch * 2.5 * 10);
-    }
-
-
-    public static Length createFoots(int foot) {
-        return new Length(foot * 300);
+    public static Length create(double length, Unit unit) {
+        return new Length(length,unit);
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Length length1 = (Length) o;
-        return Double.compare(length, length1.length) == 0;
+        return length * unit.baseValue() == length1.length * length1.unit.baseValue();
     }
 
     @Override
@@ -39,6 +28,7 @@ public class Length {
     }
 
     public Length add(Length unit2) {
-        return new Length(length + unit2.length);
+        double total = length * unit.baseValue() +  unit2.length * unit2.unit.baseValue();
+        return new Length(total/ Unit.INCHES.baseValue(), Unit.INCHES);
     }
 }
