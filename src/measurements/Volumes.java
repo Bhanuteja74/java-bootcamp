@@ -13,8 +13,8 @@ public class Volumes {
         return new Volumes(gallon * 3.78);
     }
 
-    public static Volumes createLiters(double v) {
-        return new Volumes(v * 1);
+    public static Volumes createLiters(double liters) {
+        return new Volumes(liters * 1);
     }
 
     @Override

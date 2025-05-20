@@ -37,4 +37,8 @@ public class Length {
     public int hashCode() {
         return Objects.hashCode(length);
     }
+
+    public Length add(Length unit2) {
+        return new Length(length + unit2.length);
+    }
 }

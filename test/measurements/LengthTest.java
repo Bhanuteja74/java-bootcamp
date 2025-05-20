@@ -32,4 +32,18 @@ class LengthTest {
         Length foots = Length.createFoots(1);
         assertEquals(foots, inches);
     }
+
+    @Test
+    void addTwoUnits() {
+        Length unit1 = Length.createCentimeters(1);
+        Length unit2 = Length.createCentimeters(2);
+        assertEquals(Length.createMillimeteres(30), unit1.add(unit2));
+    }
+
+    @Test
+    void addTwoFootUnits() {
+        Length unit1 = Length.createFoots(2);
+        Length unit2 = Length.createFoots(3);
+        assertEquals(Length.createInches(60), unit1.add(unit2));
+    }
 }
